@@ -380,7 +380,7 @@ public class Jframe extends JFrame {
 	private class Paint extends JPanel implements Observer {
 		//dimensioni guide
 		private  int sizeS = 15;
-		//booleano per verificare se il disegno è stato salvato
+		//booleano per verificare se il disegno \E8 stato salvato
 		private boolean isSaved;
 		//numero strumento che l'utente ha selezionato
 		private int NStrumento;
@@ -392,7 +392,7 @@ public class Jframe extends JFrame {
 		private int rect;
 		//colore attualmente selezionato
 		private Color colorC;
-		//stile che la forma dovrà prendere
+		//stile che la forma dovr\E0 prendere
 		private int stile;
 		//punto per facilitare il disegno della penna
 		private Point2D test;
@@ -432,7 +432,7 @@ public class Jframe extends JFrame {
 			g2.translate(-135,-66);
 
 			ShapeP s=null;
-			//verifico se c'è un'immagine da caricare
+			//verifico se c'\E8 un'immagine da caricare
 			if(img != null) {
 				//disegno l'immagine
 				g2.drawImage(img,135,66,this.getWidth(),this.getHeight(),null);
@@ -723,7 +723,7 @@ public class Jframe extends JFrame {
 		private void setUpShape(ShapeP shape, Point2D point) {
 			//comportamento leggermente diverso per la penna
 			if(shape instanceof Pen) {
-				if(test == null) //verifico se il punto era già istanziato, altrimenti continuo con il punto precedente
+				if(test == null) //verifico se il punto era gi\E0 istanziato, altrimenti continuo con il punto precedente
 					test = point;
 				shape.setScale(size.getSelectedIndex()+5);
 				shape.setStile(stile);
@@ -752,7 +752,7 @@ public class Jframe extends JFrame {
 				repaint();
 			}
 			//metodo per recuperare oggetti cancellati dalla gomma
-			for(int i = 0; i<shapes.size()-1;i++) {
+			/*for(int i = 0; i<shapes.size()-1;i++) {
 				if(shapes.get(i).getNShape() == 9) {
 					for(int j = 0;j<shapes.size()-1;j++) {
 						if(shapes.size()>i && shapes.size()>j )
@@ -760,7 +760,7 @@ public class Jframe extends JFrame {
 								creator.releaseShape(shapes.remove(j));
 					}
 				}
-			}
+			}*/
 		}
 		//metodo per rimuovere una figura
 		private void removeShape() {
@@ -786,7 +786,7 @@ public class Jframe extends JFrame {
 				selectedShape = null;
 
 		}
-		//verifica se il punto selezionato in cui si sta draggando può essere draggato
+		//verifica se il punto selezionato in cui si sta draggando pu\F2 essere draggato
 		private void checkClickForDrag(Point2D p) {
 			if(selectedShape!=null)
 				for(int j=0; j<selectedShape.getPoints().length;j++)
@@ -795,7 +795,7 @@ public class Jframe extends JFrame {
 						rect=j;
 					}
 		}
-		//verifica ce il click è fatto su figure selezionabili
+		//verifica ce il click \E8 fatto su figure selezionabili
 		private void checkClick(Point2D p) {
 			for(int i=0;i<shapes.size();i++) {
 				if(shapes.get(i).getShape().contains(p) || shapes.get(i).getShape().getBounds().contains(p) ) {
